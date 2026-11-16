@@ -18,44 +18,140 @@
 .cert-area{margin:14px 0 55px;border:1px solid var(--ink)}.cert-intro{display:flex;justify-content:space-between;gap:15px;align-items:center;padding:25px}.cert-intro h3{font-size:clamp(34px,5vw,56px);margin:8px 0}.cert-intro p{font-size:12px;color:var(--muted);margin:0;line-height:1.8}.cert-count{font:900 88px 'Barlow Condensed',Impact,sans-serif;color:var(--orange);line-height:1}.cert-area details{border-top:1px solid var(--line)}.cert-area summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:19px 25px;font-weight:700;font-size:13px}.cert-area summary::-webkit-details-marker{display:none}.cert-area summary::after{content:'+';font:24px 'Barlow Condensed',sans-serif;color:var(--orange)}.cert-area details[open] summary::after{content:'−'}.cert-area summary:hover{background:#e5e1d6}.cert-area ul{margin:0;padding:0 35px 22px 47px}.cert-area li{font-size:12px;line-height:1.8;padding:5px 0;overflow-wrap:anywhere}.note{font-size:11px;color:var(--muted);line-height:1.8;margin:0 0 22px}.bottom{display:flex;justify-content:space-between;align-items:center;gap:20px;border-top:1px solid var(--ink);padding:33px 0}.bottom h2{font-size:42px;margin:0 0 7px}.bottom p{font-size:12px;color:var(--muted);margin:0}.back{display:inline-flex;gap:16px;padding:14px 20px;border:1px solid var(--ink);font-size:12px;font-weight:700;white-space:nowrap}.back:hover{background:var(--ink);color:var(--paper)}footer{display:flex;justify-content:space-between;gap:10px;padding-block:23px;border-top:1px solid var(--ink);font:10px monospace;letter-spacing:1px}footer a:hover{color:var(--orange)}
 @media(min-width:1440px){header,main,footer{padding-inline:80px}}@media(max-width:760px){header{height:66px}.logo{font-size:27px}nav{gap:10px;font-size:9px;letter-spacing:0}.hero{padding:35px 0 30px}h1{font-size:clamp(70px,15vw,110px)}.intro{font-size:12px}.hero-foot{font-size:9px}.skill-grid,.cube-cols{grid-template-columns:1fr}.card{min-height:200px;padding:21px}.cube-area{padding:20px}.cube-panel{padding:17px}.cert-intro{padding:20px}.cert-count{font-size:66px}.cert-area summary{padding:16px 20px}.cert-area ul{padding-left:39px}.bottom{align-items:flex-start;flex-direction:column}.bottom h2{font-size:35px}}@media(max-width:380px){header,main,footer{padding-inline:4vw}nav{gap:7px;font-size:8px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
 
-
-/* 電腦版：五張技能卡片橫向排列 */
-@media (min-width: 761px) {
-  .skill-grid {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 10px;
-  }
-
-  .card {
-    min-width: 0;
-    min-height: 0;
-    padding: 16px;
-  }
-
-  .card h3 {
-    font-size: 24px;
-    margin: 18px 0 8px;
-    overflow-wrap: anywhere;
-  }
-
-  .card p {
-    font-size: 11px;
-  }
-
-  .tag {
-    font-size: 10px;
-    padding: 5px 8px;
-  }
-
-  .card-foot {
-    flex-wrap: wrap;
-  }
-}
-
 /* 手機版：維持一排一張 */
 @media (max-width: 760px) {
   .skill-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+.computer-row > * {
+  min-width: 0;
+}
+
+.computer-row .computer-card {
+  min-height: 0;
+  justify-content: center;
+  padding: 16px;
+}
+
+.computer-card h3 {
+  font-size: 24px;
+  margin: 12px 0 8px;
+}
+
+.computer-card p {
+  margin-bottom: 12px;
+}
+
+.computer-card .tags {
+  margin-top: 0;
+}
+
+.computer-card .card-foot {
+  margin-top: 12px;
+  padding-top: 10px;
+}
+
+.typing-panel {
+  background: #191919;
+  color: #f2f0e8;
+  padding: 18px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 13px;
+}
+
+.typing-heading {
+  color: #ff5a1f;
+  font: 700 11px monospace;
+  letter-spacing: 1px;
+}
+
+.typing-columns {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr 1.1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.typing-score {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.typing-score strong {
+  color: #ff5a1f;
+  font: 800 clamp(45px, 5vw, 68px)
+    'Barlow Condensed', Impact, sans-serif;
+  line-height: 1;
+}
+
+.typing-score span,
+.typing-score small {
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+.typing-score small {
+  color: #aaa;
+}
+
+.typing-year {
+  align-self: center;
+}
+
+.typing-year h4 {
+  color: #ff5a1f;
+  font-size: 14px;
+  margin: 0 0 9px;
+}
+
+.typing-record {
+  margin-bottom: 9px;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.typing-record:last-child {
+  margin-bottom: 0;
+}
+
+.typing-record span {
+  color: #ff5a1f;
+}
+
+.typing-note {
+  margin: 0;
+  color: #aaa;
+  font-size: 10px;
+}
+
+/* 手機版 */
+@media (max-width: 760px) {
+  .computer-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .typing-columns {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .typing-panel {
+    padding: 20px;
+  }
+
+  .typing-year {
+    align-self: stretch;
+  }
+
+  .typing-score strong {
+    font-size: 60px;
   }
 }
 </style>
@@ -72,8 +168,93 @@
 <article class="card"><div class="card-top"><strong>02 / MUSIC</strong><span class="mark">♫</span></div><h3>MUSIC &<br>DRUMMING</h3><p>演奏、鼓譜編寫與兒童打擊樂教學。</p><div class="tags"><span class="tag">爵士鼓演奏</span><span class="tag">爵士鼓譜編寫</span><span class="tag">兒童非洲鼓教學</span></div><div class="card-foot"><span>PERFORM / WRITE</span><a href="https://www.mymusic5.com/zh-hant/arial5690" target="_blank" rel="noopener noreferrer">MUSIC STORE ↗</a></div></article>
 <article class="card"><div class="card-top"><strong>03 / MEDIA & DESIGN</strong><span class="mark">↗</span></div><h3>MEDIA &<br>DESIGN</h3><p>影音剪輯與商品內容呈現。</p><div class="tags"><span class="tag">短影音製作</span><span class="tag">影片剪輯</span><span class="tag">商品展示</span></div><div class="card-foot"><span>VIDEO / CONTENT</span></div></article>
 <article class="card"><div class="card-top"><strong>04 / EDUCATION</strong><span class="mark">↗</span></div><h3>EDUCATION &<br>RESEARCH</h3><p>教育活動與數位學習研究經驗。</p><div class="tags"><span class="tag">數位學習研究</span><span class="tag">兒童教學</span></div><div class="card-foot"><span>LEARNING / TEACHING</span></div></article>
-<article class="card"><div class="card-top"><strong>05 / COMPUTER</strong><span class="mark">↗</span></div><h3>COMPUTER &<br>DIGITAL SKILLS</h3><p>影像編輯、圖像設計與數位內容工具。證照所涵蓋的其他領域另列於下方。</p><div class="tags"><span class="tag">Adobe Photoshop</span><span class="tag">Adobe Illustrator</span><span class="tag">數位影像編輯</span><span class="tag">向量圖像編輯</span><span class="tag">數位內容製作</span></div><div class="card-foot"><span>GRAPHIC / DIGITAL</span></div></article>
 
+<!-- 05 電腦技能 + 打字紀錄 -->
+<div class="computer-row">
+
+  <!-- 左側：保留原本技能標籤 -->
+  <article class="card computer-card">
+    <div class="card-top">
+      <strong>05 / COMPUTER</strong>
+      <span class="mark">↗</span>
+    </div>
+
+    <h3>COMPUTER &<br>DIGITAL SKILLS</h3>
+
+    <p>
+      影像編輯、圖像設計與數位內容工具。
+      證照所涵蓋的其他領域另列於下方。
+    </p>
+
+    <div class="tags">
+      <span class="tag">Adobe Photoshop</span>
+      <span class="tag">Adobe Illustrator</span>
+      <span class="tag">數位影像編輯</span>
+      <span class="tag">向量圖像編輯</span>
+      <span class="tag">數位內容製作</span>
+    </div>
+
+    <div class="card-foot">
+      <span>GRAPHIC / DIGITAL</span>
+    </div>
+  </article>
+
+  <!-- 右側：打字能力及比賽紀錄 -->
+  <div class="typing-panel">
+
+    <div class="typing-heading">
+      TYPING / 打字能力
+    </div>
+
+    <div class="typing-columns">
+
+      <!-- 中文打字能力 -->
+      <div class="typing-score">
+        <strong>110.4</strong>
+        <span>中文看打／字每分鐘</span>
+        <small>MOCC 甲級認證</small>
+      </div>
+
+      <!-- 2021 比賽 -->
+      <div class="typing-year">
+        <h4>2021</h4>
+
+        <div class="typing-record">
+          秋季賽・南區賽<br>
+          中文看打・<span>第 1 名</span>
+        </div>
+
+        <div class="typing-record">
+          秋季賽・全國賽<br>
+          中文看打・<span>第 2 名</span>
+        </div>
+      </div>
+
+      <!-- 2022 比賽 -->
+      <div class="typing-year">
+        <h4>2022</h4>
+
+        <div class="typing-record">
+          春季賽・全國賽<br>
+          英文看打・<span>第 1 名</span>
+        </div>
+
+        <div class="typing-record">
+          春季賽・全國賽<br>
+          中文看打・<span>第 3 名</span>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="typing-note">
+      全民 e 化資訊運動會／大專社會組
+    </p>
+
+  </div>
+
+</div>
+  
 </div></section>
 <section aria-labelledby="cube-title"><div class="section-head"><h2>FEATURED / 魔術方塊教學</h2><span>06 / SPECIALTY</span></div><div class="cube-area"><div class="cube-title"><div><div class="card-top"><strong>06 / SPEEDCUBING & TEACHING</strong></div><h3 id="cube-title">RUBIK'S<br>CUBE<span class="accent">.</span></h3></div><span class="mark" aria-hidden="true">✳</span></div><p class="cube-summary">正規魔方的基礎與速解教學，以及多種異形魔方的基礎教學。</p><div class="cube-cols">
 <div class="cube-panel"><h4><span>01 /</span> REGULAR CUBES / 正規魔方</h4><div class="cube-list"><div class="cube-row"><b>2 階</b><small>基礎＆速解教學</small></div><div class="cube-row"><b>3 階</b><small>基礎＆速解教學</small></div><div class="cube-row"><b>4 階</b><small>基礎＆速解教學</small></div><div class="cube-row"><b>5 階以上</b><small>基礎教學</small></div></div></div>
