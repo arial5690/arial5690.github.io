@@ -154,6 +154,20 @@
     font-size: 60px;
   }
 }
+  
+/* 電腦版：01～04 第一排，05 與打字紀錄第二排 */
+@media (min-width: 761px) {
+  .skill-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .computer-row {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+    gap: 10px;
+  }
+}
 </style>
 </head>
 <body id="top">
