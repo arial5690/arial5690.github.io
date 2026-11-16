@@ -18,41 +18,44 @@
 .cert-area{margin:14px 0 55px;border:1px solid var(--ink)}.cert-intro{display:flex;justify-content:space-between;gap:15px;align-items:center;padding:25px}.cert-intro h3{font-size:clamp(34px,5vw,56px);margin:8px 0}.cert-intro p{font-size:12px;color:var(--muted);margin:0;line-height:1.8}.cert-count{font:900 88px 'Barlow Condensed',Impact,sans-serif;color:var(--orange);line-height:1}.cert-area details{border-top:1px solid var(--line)}.cert-area summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:19px 25px;font-weight:700;font-size:13px}.cert-area summary::-webkit-details-marker{display:none}.cert-area summary::after{content:'+';font:24px 'Barlow Condensed',sans-serif;color:var(--orange)}.cert-area details[open] summary::after{content:'−'}.cert-area summary:hover{background:#e5e1d6}.cert-area ul{margin:0;padding:0 35px 22px 47px}.cert-area li{font-size:12px;line-height:1.8;padding:5px 0;overflow-wrap:anywhere}.note{font-size:11px;color:var(--muted);line-height:1.8;margin:0 0 22px}.bottom{display:flex;justify-content:space-between;align-items:center;gap:20px;border-top:1px solid var(--ink);padding:33px 0}.bottom h2{font-size:42px;margin:0 0 7px}.bottom p{font-size:12px;color:var(--muted);margin:0}.back{display:inline-flex;gap:16px;padding:14px 20px;border:1px solid var(--ink);font-size:12px;font-weight:700;white-space:nowrap}.back:hover{background:var(--ink);color:var(--paper)}footer{display:flex;justify-content:space-between;gap:10px;padding-block:23px;border-top:1px solid var(--ink);font:10px monospace;letter-spacing:1px}footer a:hover{color:var(--orange)}
 @media(min-width:1440px){header,main,footer{padding-inline:80px}}@media(max-width:760px){header{height:66px}.logo{font-size:27px}nav{gap:10px;font-size:9px;letter-spacing:0}.hero{padding:35px 0 30px}h1{font-size:clamp(70px,15vw,110px)}.intro{font-size:12px}.hero-foot{font-size:9px}.skill-grid,.cube-cols{grid-template-columns:1fr}.card{min-height:200px;padding:21px}.cube-area{padding:20px}.cube-panel{padding:17px}.cert-intro{padding:20px}.cert-count{font-size:66px}.cert-area summary{padding:16px 20px}.cert-area ul{padding-left:39px}.bottom{align-items:flex-start;flex-direction:column}.bottom h2{font-size:35px}}@media(max-width:380px){header,main,footer{padding-inline:4vw}nav{gap:7px;font-size:8px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
 
-/* 手機版：每排一張卡片 */
-@media (max-width: 760px) {
-  .skills-grid {
-    grid-template-columns: 1fr !important;
-  }
 
-  .skill-card {
-    grid-column: auto !important;
-    width: 100%;
-  }
-}
-
-/* 電腦版：五個技能區塊橫向排列 */
+/* 電腦版：五張技能卡片橫向排列 */
 @media (min-width: 761px) {
-  .skills-grid {
-    display: grid !important;
-    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  .skill-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 10px;
   }
 
-  .skill-card {
-    grid-column: auto !important;
+  .card {
     min-width: 0;
-    min-height: 0 !important;
-    padding: 16px !important;
+    min-height: 0;
+    padding: 16px;
   }
 
-  .skill-card h2 {
-    font-size: 24px !important;
-    margin: 18px 0 8px !important;
+  .card h3 {
+    font-size: 24px;
+    margin: 18px 0 8px;
+    overflow-wrap: anywhere;
   }
 
-  .skill-card .tag {
+  .card p {
+    font-size: 11px;
+  }
+
+  .tag {
     font-size: 10px;
     padding: 5px 8px;
+  }
+
+  .card-foot {
+    flex-wrap: wrap;
+  }
+}
+
+/* 手機版：維持一排一張 */
+@media (max-width: 760px) {
+  .skill-grid {
+    grid-template-columns: 1fr;
   }
 }
 </style>
