@@ -29,6 +29,32 @@
     width: 100%;
   }
 }
+
+/* 電腦版：五個技能區塊橫向排列 */
+@media (min-width: 1025px) {
+  .skills-grid {
+    display: grid !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    gap: 10px;
+  }
+
+  .skill-card {
+    grid-column: auto !important;
+    min-width: 0;
+    min-height: 0 !important;
+    padding: 16px !important;
+  }
+
+  .skill-card h2 {
+    font-size: 24px !important;
+    margin: 18px 0 8px !important;
+  }
+
+  .skill-card .tag {
+    font-size: 10px;
+    padding: 5px 8px;
+  }
+}
 </style>
 </head>
 <body id="top">
